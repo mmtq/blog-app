@@ -18,15 +18,15 @@ export default function createBlogroute() {
                     <form className="flex flex-col gap-4" action={handleSubmission}>
                         <div className="flex flex-col gap-2">
                             <Label>Title</Label>
-                            <Input required type="text" placeholder="Enter title" />
+                            <Input name="title" required type="text" placeholder="Enter title" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <Label>Content</Label>
-                            <Textarea required placeholder="Enter content" />
+                            <Textarea name="content" required placeholder="Enter content" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <Label>Image URL</Label>
-                            <Input required type="url" placeholder="Enter image URL" />
+                            <Input name="imageURL" required type="url" placeholder="Enter image URL" />
                         </div>
                         <Button type="submit">Submit</Button>
                     </form>
