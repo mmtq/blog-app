@@ -5,6 +5,7 @@ import { prisma } from "../utils/db";
 import BlogPostCard from "@/components/general/BlogPostCard";
 import { Suspense } from "react";
 import BlogPostsGrid from "@/components/general/BlogPostsGrid";
+import { redirect } from "next/navigation";
 
 async function getData(userID: string) {
   const data = await prisma.blogpost.findMany({
@@ -23,6 +24,11 @@ async function BlogPosts() {
   const { getUser } = getKindeServerSession();
   const user = (await getUser())!;
   const data = await getData(user.id);
+
+  if (!user) {
+  return redirect("/api/auth/register");
+}
+
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
