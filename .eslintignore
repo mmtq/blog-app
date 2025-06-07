@@ -1,1 +1,9 @@
-lib/
+# Ignore Prisma's generated client
+lib/generated/
+
+# Ignore build files
+.next/
+dist/
+
+# Ignore node_modules (usually auto-ignored, but safe to include)
+node_modules/
