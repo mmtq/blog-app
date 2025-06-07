@@ -9,14 +9,12 @@ import { prisma } from "@/app/utils/db";
 import { redirect } from "next/navigation";
 
 // ✅ Add correct type for Server Component props
-type EditPageProps = {
-  searchParams: {
-    id?: string;
-  };
+type Props = {
+  searchParams: { id?: string }
 };
 
 
-export default async function EditPage({ searchParams }: EditPageProps) {
+export default async function EditPage({ searchParams }: Props) {
   const postId = searchParams.id;
   if (!postId) {
     redirect("/dashboard");
