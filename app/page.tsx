@@ -3,6 +3,7 @@ import Link from "next/link";
 import { prisma } from "./utils/db";
 import BlogPostCard from "@/components/general/BlogPostCard";
 import { Suspense } from "react";
+import BlogPostsGrid from "@/components/general/BlogPostsGrid";
 
 async function getData() {
   const data = await prisma.blogpost.findMany({
@@ -25,7 +26,7 @@ export default function Home() {
   return (
     <div className="py-6">
       <h1 className="text-3xl font-bold tracking-tight mb-8">Latest Posts</h1>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<BlogPostsGrid />}>
         <BlogPosts />
       </Suspense>
     </div>
