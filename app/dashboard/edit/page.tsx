@@ -8,13 +8,7 @@ import SubmitButton from "@/components/general/SubmitButton";
 import { prisma } from "@/app/utils/db";
 import { redirect } from "next/navigation";
 
-// ✅ Add correct type for Server Component props
-type Props = {
-  searchParams: { id?: string }
-};
-
-
-export default async function EditPage({ searchParams }: Props) {
+export default async function EditPage({ searchParams }: { searchParams: { id: string } }) {
   const postId = searchParams.id;
   if (!postId) {
     redirect("/dashboard");
