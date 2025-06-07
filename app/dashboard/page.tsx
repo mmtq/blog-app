@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import { buttonVariants } from "@/components/ui/button"
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link"
