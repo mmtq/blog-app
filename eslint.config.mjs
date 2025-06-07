@@ -11,6 +11,16 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // 👇 Add this block to ignore paths
+  {
+    ignores: [
+      "lib/generated/",  // Ignore Prisma client
+      ".next/",
+      "dist/",
+      "node_modules/",
+    ],
+  },
 ];
 
 export default eslintConfig;
