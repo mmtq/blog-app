@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { prisma } from "./utils/db";
 import BlogPostCard from "@/components/general/BlogPostCard";
 import { Suspense } from "react";
