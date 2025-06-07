@@ -29,7 +29,6 @@ export default function createBlogroute() {
                             <Input name="imageURL" required type="url" placeholder="Enter image URL" />
                         </div>
                         <SubmitButton />
-
                     </form>
                 </CardContent>
             </Card>
